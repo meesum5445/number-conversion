@@ -18,10 +18,11 @@ int dec_to_bin(int decimal_number)
     while(decimal_number>0)
     {
         dig=decimal_number%2;
-        decimal_number/2;
-        binary_number=(binary_number*10)+dig;
+        binary_number=binary_number*10+dig;
+        cout<<dig;
+        decimal_number/=2;
+        
     }
-    cout<<"HELLO WORLD";
     binary_number=(reverse(binary_number))%10;
     return binary_number;
 }
@@ -32,8 +33,7 @@ int main()
     cout<<"\n____________________________________________\n";
     cout<<"Decimal to binary\n";
     cout<<"Enter any decimal number : ";
-    decimal_number=55;
-    binary_number=dec_to_bin(55);
-    cout<<binary_number;
+    cin>>decimal_number;
+    cout<<dec_to_bin(decimal_number);
     
 }
