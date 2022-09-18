@@ -18,12 +18,10 @@ int dec_to_bin(int decimal_number)
     while(decimal_number>0)
     {
         dig=decimal_number%2;
-        binary_number=binary_number*10+dig;
-        cout<<dig;
+        binary_number=(binary_number*10)+dig;
         decimal_number/=2;
-        
     }
-    binary_number=(reverse(binary_number))%10;
+    binary_number=(reverse(binary_number))/10;
     return binary_number;
 }
 int main()
