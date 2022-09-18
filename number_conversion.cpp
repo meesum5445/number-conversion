@@ -3,9 +3,12 @@ using namespace std;
 int reverse(int number)
 {
     int reversed_num=0,digit;
-    digit=number%10;
-    number/=10;
-    reversed_num=(reversed_num*10)+digit;
+    while (number>0)
+    {
+        digit=number%10;
+        number/=10;
+        reversed_num=(reversed_num*10)+digit;
+    }
     return reversed_num;
 }
 int dec_to_bin(int decimal_number)
