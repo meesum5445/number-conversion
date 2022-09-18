@@ -19,6 +19,7 @@ int dec_to_bin(int decimal_number)
         binary_number=(binary_number*10)+dig;
     }
     cout<<"HELLO WORLD";
+    binary_number=(reverse(binary_number))%10;
     return binary_number;
 }
 int main()
