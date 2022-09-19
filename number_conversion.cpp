@@ -49,7 +49,7 @@ int dec_to_oct(int decimal_number)
         decimal_number/=8;
     }
     cout<<(reverse(octal_number))/10;
-    
+    return 0;
 }
 int dec_to_hex(int decimal)
 {
