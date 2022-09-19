@@ -51,6 +51,61 @@ int dec_to_oct(int decimal_number)
     cout<<(reverse(octal_number))/10;
     
 }
+int dec_to_hex(int decimal)
+{
+    int decimal2=decimal;
+    int len_of_array=0;
+    while(decimal2>0)
+    {
+        decimal2/=16;
+        len_of_array++;
+    }
+    
+    int binary[len_of_array]={};
+    int i=0;
+    while(i<len_of_array)
+    {
+        binary[i]=decimal%16;
+        decimal/=16;
+        i++;
+    }
+    for (int j = len_of_array-1; j >=0 ; j--) 
+    {
+        if (binary[j]>9)
+        {
+            if (binary[j]==10)
+            {
+                cout<<"A";
+            }
+            else if(binary[j]==11)
+            {
+                cout<<"B";
+            }
+            else if(binary[j]==12)
+            {
+                cout<<"C";
+            }
+            else if(binary[j]==13)
+            {
+                cout<<"D";
+            }
+            else if(binary[j]==14)
+            {
+                cout<<"E";
+            }
+            else
+            {
+                cout<<"F";
+            }
+        }
+        else
+        {
+            cout << binary[j];
+        }
+    }
+    
+    return 0;
+}
 int main()
 {
     int decimal_number;
