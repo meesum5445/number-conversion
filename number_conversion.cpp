@@ -6,14 +6,15 @@ int reverse(int number)
     while (number>0)
     {
         digit=number%10;
-        number/=10;
         reversed_num=(reversed_num*10)+digit;
+        number/=10;
     }
     return reversed_num;
 }
 int dec_to_bin(int decimal_number)
 {
-    int binary_number,dig;
+    long int binary_number;
+    int dig;
     binary_number=1;
     while(decimal_number>0)
     {
@@ -39,7 +40,7 @@ int dec_to_oct(int decimal_number)
 }
 int main()
 {
-    int decimal_number,binary_number,a;
+    int decimal_number;
     cout<<"NUMBER CONVERSIONS";
     cout<<"\n____________________________________________\n";
     cout<<"Decimal to binary\n";
