@@ -1,8 +1,8 @@
 #include<iostream>
 using namespace std;
-int reverse(long int number)
+int reverse(int number)
 {
-    long int reversed_num=0;
+    int reversed_num=0;
     int digit;
     while (number>0)
     {
@@ -12,23 +12,34 @@ int reverse(long int number)
     }
     return reversed_num;
 }
-int dec_to_bin(long int decimal_number)
+int dec_to_bin(int decimal)
 {
-    long int binary_number;
-    int dig;
-    binary_number=1;
-    while(decimal_number>0)
+    int decimal2=decimal;
+    int len_of_array=0;
+    while(decimal2>0)
     {
-        dig=decimal_number%2;
-        binary_number=(binary_number*10)+dig;
-        decimal_number/=2;
+        decimal2/=2;
+        len_of_array++;
     }
-    binary_number=(reverse(binary_number))/10;
-    return binary_number;
+    
+    int binary[len_of_array]={};
+    int i=0;
+    while(i<len_of_array)
+    {
+        binary[i]=decimal%2;
+        decimal/=2;
+        i++;
+    }
+    for (int j = len_of_array-1; j >=0 ; j--) 
+    {
+    cout << binary[j];
+    }
+    
+    return 0;
 }
-int dec_to_oct(long int decimal_number)
+int dec_to_oct(int decimal_number)
 {
-    long octal_number;
+    int octal_number;
     int dig;
     octal_number=1;
     while(decimal_number>0)
@@ -42,13 +53,13 @@ int dec_to_oct(long int decimal_number)
 }
 int main()
 {
-    long int decimal_number;
+    int decimal_number;
     cout<<"NUMBER CONVERSIONS";
     cout<<"\n____________________________________________\n";
     cout<<"Decimal to binary\n";
     cout<<"Enter any decimal number : ";
     cin>>decimal_number;
-    cout<<dec_to_bin(decimal_number);
+    dec_to_bin(decimal_number);
     
     cout<<"\nDecimal to binary\n";
     cout<<"Enter any decimal number : ";
