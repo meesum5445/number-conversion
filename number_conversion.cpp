@@ -48,8 +48,8 @@ int dec_to_oct(int decimal_number)
         octal_number=(octal_number*10)+dig;
         decimal_number/=8;
     }
-    octal_number=(reverse(octal_number))/10;
-    return octal_number;
+    cout<<(reverse(octal_number))/10;
+    
 }
 int main()
 {
@@ -64,6 +64,6 @@ int main()
     cout<<"\nDecimal to binary\n";
     cout<<"Enter any decimal number : ";
     cin>>decimal_number;
-    cout<<dec_to_oct(decimal_number);
+    dec_to_oct(decimal_number);
     
 }
