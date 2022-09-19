@@ -116,9 +116,14 @@ int main()
     cin>>decimal_number;
     dec_to_bin(decimal_number);
     
-    cout<<"\nDecimal to binary\n";
+    cout<<"\nDecimal to octal\n";
     cout<<"Enter any decimal number : ";
     cin>>decimal_number;
     dec_to_oct(decimal_number);
+    
+    cout<<"\nDecimal to hexadecimal\n";
+    cout<<"Enter any decimal number : ";
+    cin>>decimal_number;
+    dec_to_hex(decimal_number);
     
 }
