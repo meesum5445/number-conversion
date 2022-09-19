@@ -98,13 +98,15 @@ int dec_to_hex(int decimal)
 }
 int bin_to_dec(long int binary)
 {
-    int i=1;
+    int i=0,decimal=0;
     while(binary>0)
     {
-        int decimal =(binary%10)*pow(2,i);
+        decimal+=(binary%10)*pow(2,i);
         binary/=10;
         i++;
     }
+    cout<<decimal;
+    return 0;
 }
 int main()
 {
