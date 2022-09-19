@@ -24,6 +24,19 @@ int dec_to_bin(int decimal_number)
     binary_number=(reverse(binary_number))/10;
     return binary_number;
 }
+int dec_to_oct(int decimal_number)
+{
+    int octal_number,dig;
+    octal_number=1;
+    while(decimal_number>0)
+    {
+        dig=decimal_number%8;
+        octal_number=(octal_number*10)+dig;
+        decimal_number/=8;
+    }
+    octal_number=(reverse(octal_number))/10;
+    return octal_number;
+}
 int main()
 {
     int decimal_number,binary_number,a;
@@ -33,5 +46,10 @@ int main()
     cout<<"Enter any decimal number : ";
     cin>>decimal_number;
     cout<<dec_to_bin(decimal_number);
+    
+    cout<<"\nDecimal to binary\n";
+    cout<<"Enter any decimal number : ";
+    cin>>decimal_number;
+    cout<<dec_to_oct(decimal_number);
     
 }
