@@ -1,5 +1,6 @@
 #include<iostream>
 #include<cmath>  
+#include<string>
 using namespace std;
 long int reverse(long int number)
 {
@@ -120,8 +121,23 @@ int oct_to_dec(int octal)
     cout<<decimal;
     return 0;
 }
+void hex_to_dec(string hexadecimal)
+{
+    int decimal=0;
+    int i=0;
+    int j=hexadecimal.length()-1;
+    while(i<hexadecimal.length())
+    {
+        decimal+=hexadecimal[i]*pow(16,j);
+        cout<<hexadecimal[i]<<" * "<<pow(16,j)<<"\n";
+        i++;
+        j--;
+    }
+    cout<<decimal;
+}
 int main()
 {
+    string hexa_number;
     int decimal_number,Octal_number;
     long int binary_number;
     cout<<"NUMBER CONVERSIONS";
@@ -150,4 +166,9 @@ int main()
     cout<<"Enter any Octal number : ";
     cin>>Octal_number;
     oct_to_dec(Octal_number);
+    cout<<"\n____________________________________________\n";
+    cout<<"\nHexadecimal to decimal\n";
+    cout<<"Enter any hexadecimal number : ";
+    cin>>hexa_number;
+    hex_to_dec(hexa_number);
 }
