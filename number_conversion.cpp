@@ -1,4 +1,5 @@
 #include<iostream>
+#include<cmath>  
 using namespace std;
 long int reverse(long int number)
 {
@@ -95,24 +96,39 @@ int dec_to_hex(int decimal)
     
     return 0;
 }
+int bin_to_dec(long int binary)
+{
+    int i=1;
+    while(binary>0)
+    {
+        int decimal =(binary%10)*pow(2,i);
+        binary/=10;
+        i++;
+    }
+}
 int main()
 {
     int decimal_number;
+    long int binary_number;
     cout<<"NUMBER CONVERSIONS";
     cout<<"\n____________________________________________\n";
     cout<<"Decimal to binary\n";
     cout<<"Enter any decimal number : ";
     cin>>decimal_number;
     dec_to_bin(decimal_number);
-    
+    cout<<"\n____________________________________________\n";
     cout<<"\nDecimal to octal\n";
     cout<<"Enter any decimal number : ";
     cin>>decimal_number;
     dec_to_oct(decimal_number);
-    
+    cout<<"\n____________________________________________\n";
     cout<<"\nDecimal to hexadecimal\n";
     cout<<"Enter any decimal number : ";
     cin>>decimal_number;
     dec_to_hex(decimal_number);
-    
+    cout<<"\n____________________________________________\n";
+    cout<<"\nBinary to decimal\n";
+    cout<<"Enter any binary number : ";
+    cin>>binary_number;
+    bin_to_dec(binary_number);
 }
