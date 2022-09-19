@@ -108,7 +108,7 @@ int bin_to_dec(long int binary)
     cout<<decimal;
     return 0;
 }
-int oct_to_dec(long int octal)
+int oct_to_dec(int octal)
 {
     int i=0,decimal=0;
     while(octal>0)
