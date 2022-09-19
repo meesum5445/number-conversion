@@ -108,9 +108,21 @@ int bin_to_dec(long int binary)
     cout<<decimal;
     return 0;
 }
+int oct_to_dec(long int octal)
+{
+    int i=0,decimal=0;
+    while(octal>0)
+    {
+        decimal+=(octal%10)*pow(8,i);
+        octal/=10;
+        i++;
+    }
+    cout<<decimal;
+    return 0;
+}
 int main()
 {
-    int decimal_number;
+    int decimal_number,Octal_number;
     long int binary_number;
     cout<<"NUMBER CONVERSIONS";
     cout<<"\n____________________________________________\n";
@@ -133,4 +145,9 @@ int main()
     cout<<"Enter any binary number : ";
     cin>>binary_number;
     bin_to_dec(binary_number);
+    cout<<"\n____________________________________________\n";
+    cout<<"\nOctal to decimal\n";
+    cout<<"Enter any Octal number : ";
+    cin>>Octal_number;
+    oct_to_dec(Octal_number);
 }
