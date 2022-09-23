@@ -40,7 +40,7 @@ int dec_to_oct(int decimal_number)
         decimal_number/=8;
     }
     cout<<(reverse(octal_number))/10;
-    
+    return 0;
 }
 int dec_to_hex(int decimal)
 {
@@ -126,10 +126,40 @@ void hex_to_dec(string hexadecimal)
     int decimal=0;
     int i=0;
     int j=hexadecimal.length()-1;
-    while(i<hexadecimal.length())
+    while(i<hexadecimal.length()-1)
     {
-        decimal+=hexadecimal[i]*pow(16,j);
-        cout<<hexadecimal[i]<<" * "<<pow(16,j)<<"\n";
+        if(hexadecimal[i]=='A')
+            decimal+=10*pow(16,j);
+        else if(hexadecimal[i]=='B')
+            decimal+=11*pow(16,j);
+        else if(hexadecimal[i]=='C')
+            decimal+=12*pow(16,j);
+        else if(hexadecimal[i]=='D')
+            decimal+=13*pow(16,j);  
+        else if(hexadecimal[i]=='E')
+            decimal+=14*pow(16,j);
+        else if(hexadecimal[i]=='F')
+            decimal+=15*pow(16,j);
+        else if(hexadecimal[i]=='G')
+            decimal+=16*pow(16,j);
+        else if(hexadecimal[i]=='1')
+            decimal+=1*pow(16,j);
+        else if(hexadecimal[i]=='2')
+            decimal+=2*pow(16,j);
+        else if(hexadecimal[i]=='3')
+            decimal+=3*pow(16,j);
+        else if(hexadecimal[i]=='4')
+            decimal+=4*pow(16,j);
+        else if(hexadecimal[i]=='5')
+            decimal+=5*pow(16,j);
+        else if(hexadecimal[i]=='6')
+            decimal+=6*pow(16,j);
+        else if(hexadecimal[i]=='7')
+            decimal+=7*pow(16,j);
+        else if(hexadecimal[i]=='8')
+            decimal+=8*pow(16,j);
+        else
+            decimal+=9*pow(16,j);
         i++;
         j--;
     }
